@@ -12,4 +12,3 @@ public abstract class PromotingEmployeeUseCase extends ConsumerUseCase<Promoting
         super(PROMOTING_EMPLOYEE.getUseCaseMetadata(), logger);
     }
 }
-
