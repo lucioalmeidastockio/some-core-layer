@@ -26,7 +26,7 @@ In order to implement the use case such as the workflow above, we need some busi
 
 <br>
 
-Let's break it down...
+But let's break it down and go easy first...
 
 ## First things first
 First of all we need to define what kind of UseCase our use case will be. Will it accept inputs? Will it return anything as output?
@@ -58,23 +58,23 @@ So, our use case is an example of ConsumerUseCase.
 
 Since we already know the type of our use case, we can start creating it. It is done by following the steps below:
 
-- Create a package with the name "use_cases" at the root of your group ID package: <br>
+- Create a [package](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation/src/main/java/br/com/stockio/use_cases) with the name "use_cases" at the root of your group ID package: <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/use_cases_package.png)
  <br>
  
-- Inside of it, create another package, this time called after the name of your use case: <br>
+- Inside of it, create [another package](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee), this time called after the name of your use case: <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/promoting_employee_use_case_package.png)
  <br>
  
-- Inside of the newest package, create a class to represent the use case contract: <br>
+- Inside of the newest package, create a [class](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/PromotingEmployeeUseCase.java) to represent the use case contract: <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecase.png)
  <br>
  
-- Make the use case class extend its respective UseCase type (in this case, ConsumerUseCase): <br>
+- Make the use case class [extend its respective UseCase type](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/PromotingEmployeeUseCase.java#L9) (in this case, ConsumerUseCase): <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/extending-consumer-use-case.png)
  <br>
  
-- Specify the input type (since it is a use case which receives input, a type for it must be defined). Create new packages inside your use case package called "io.inputs" and then create the class for your use case input there: <br>
+- Specify the [input type](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/PromotingEmployeeUseCase.java#L4) (since it is a use case which receives input, a type for it must be defined). Create [new packages inside your use case package called "io.inputs"](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/io/inputs) and then create the [class](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/io/inputs/PromotingEmployeeUseCaseInput.java) for your use case input there: <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecaseinputtype.png)
 
 
