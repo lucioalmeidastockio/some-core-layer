@@ -12,21 +12,7 @@ The use case workflow is as the represented below:
 
 <br>
 
-In order to implement the use case such as the workflow above, we need some business entities:
-
-<br>
-
-- [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
-- [Role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Role.java)
-- [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
-
-<br>
-
-![entities](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/Entities.png)
-
-<br>
-
-But let's break it down and go easy first...
+Let's break it down!
 
 ## First things first
 First of all we need to define what kind of UseCase our use case will be. Will it accept inputs? Will it return anything as output?
@@ -136,3 +122,40 @@ That's it. Now those fields are required in order for your use case to execute.
 <br>
 
 ## Use Case Implementation
+
+Getting past the point of validating input data, it's time to go into the specifics of the rules of our use case execution.
+
+Let's take another look at our workflow:
+
+<br>
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/ofportsandentities.png)
+
+<br>
+
+Some parts of our workflow require us to make contact with components from the _external world_, such as databases or other services. That means some kind of specific technology, library or framework will be used in order to accomplish that. The problem with that is we can't make our use case layer coupled to the set of technologies we chose to use at the moment. That is because if tomorrow, next week, next month or next year we decide to change our choice we must be able to get it done without having to change anything in our use case layer. 
+
+How is it possible?
+
+### Abstraction, baby! Let's use Ports!
+
+Each time we need to make contact with some external component, we will just create a Port for that. Ports will be a layer of abstraction in which we will just trust whoever implements them will do it rightly. If our objective is to retrieve an employee by its ID, we'll create a Port for that. If the actual retrievement will be done by fetching an API or querying a table in a database directly, that's none of the UseCase layer's business. We'll just rely on the Ports.
+
+So to validate if the employee really exists, what we are going to do is to create a Port for retrieving the employee by its ID. The same will be done for the role's preexistence validation.
+
+But let's get lowprofile about it right now. What about the other part of the flow? The part which was described as being possible to be done internally once the data would've been already retrieved. That part regards to the logics that involve finishing the current role assignment, assigning a new role to the employee and incrementing the employee's history of assingments. Of course at some point we'll need to persist those changes, but to make those changes in the first place we don't need to contact any external component once the data is present.
+
+Smells like entity spirit.
+
+It seems to be pure logic. Pure business rule. It is the perfect fit for business entities. Indeed, we didn't even mention them yet, but they are right there, in front of us:
+
+- [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
+- [Role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Role.java)
+- [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
+
+<br>
+
+![entities](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/Entities.png)
+
+<br>
+
