@@ -18,3 +18,5 @@ public class PromotingEmployeeUseCaseInput extends UseCaseInput {
     private final UUID roleId;
 
 }
+
+
