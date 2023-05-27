@@ -150,8 +150,8 @@ Smells like entity spirit.
 It seems to be pure logic. Pure business rule. It is the perfect fit for business entities. Indeed, we didn't even mention them yet, but they are right there, in front of us. So let's take a look at how they could take form:
 
 - [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
-- [Role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Role.java)
 - [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
+- [Role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Role.java)
 
 <br>
 
@@ -159,3 +159,25 @@ It seems to be pure logic. Pure business rule. It is the perfect fit for busines
 
 <br>
 
+### Employee
+The employee wil be an entity which has some behaviors: assuming a new role, getting the current assignment if any present and ending a current assignment if any.
+
+It is inside of the [implementation of the Employee entity](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java) that this logic will be at!
+
+Take a look:
+
+- [Assuming new role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L18) <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/assumingnewrole.png)
+<br>
+
+- [Getting current role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L27) <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/gettingcurrentroleifany.png)
+<br>
+
+- [Ending current assignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L34) <br>
+![](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/images/endingcurrentassingmentifany.png)
+<br>
+
+### RoleAssignment
+
+### Role
