@@ -74,7 +74,7 @@ Since we already know the type of our use case, we can start creating it. It is 
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/extending-consumer-use-case.png)
  <br>
  
-- Specify the [input type](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/PromotingEmployeeUseCase.java#L4) (since it is a use case which receives input, a type for it must be defined). Create [new packages inside your use case package called "io.inputs"](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/io/inputs) and then create the [class for your use case input there](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/io/inputs/PromotingEmployeeUseCaseInput.java): <br>
+- Specify the [input type](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/PromotingEmployeeUseCase.java#L4) (since it is a use case which receives input, a type for it must be defined). Create [new packages inside your use case package called "io.inputs"](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/io/inputs) and then create the [class for your use case input there](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/io/inputs/PromotingEmployeeUseCaseInput.java) (be sure you make the new class extend the [UseCaseInput](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/use_cases/io/UseCaseInput.java) type): <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecaseinputtype.png)
 <br>
 
@@ -90,3 +90,49 @@ Since we already know the type of our use case, we can start creating it. It is 
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasemetadata.png)
 <br>
 
+That's it for the contract of our use case. Take a look at the full picture of our class: <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/fullpicusecasecontract.png)
+
+## Input details
+
+We've created the type for our input in our use case contract. Now it's time to define what constitutes the input itself. Let's see again what the workflow told us about the input data supposed to be received:
+
+<br>
+
+![](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/images/inputfields.png)
+
+<br>
+
+It says to receive the ID of the employee and the ID of the role. That is what composes our input as a whole. Those are the fields our use case input type will have.
+
+<br>
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/inputfieldsinclass.png)
+
+<br>
+
+Does the workflow tell us anything more about the input? Well, yes. It says both of the fields are required. They can't be null:
+
+<br>
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/requiredinputfields.png)
+
+<br>
+
+How to embody that rule to our code?
+
+You could implement a validation yourself for checking whether or not both values are present, but that is not necessary. Your use case instance will automatically run a validation onto your input object before executing its inner logic. If you define some fields as required and they come null it will result in an instance of [InputMappedException](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/mapped_exceptions/specifics/InputMappedException.java) being thrown along with a message specifying which field triggered such behavior.
+
+Using this approach your input class would look like this:
+
+<br>
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/notnullinputfield.png)
+
+<br>
+
+That's it. Now those fields are required in order for your use case to execute.
+
+<br>
+
+## Use Case Implementation
