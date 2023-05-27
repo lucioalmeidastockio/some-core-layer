@@ -51,3 +51,30 @@ Our use case execution starts receiving the ID of the employee being promoted an
 Turns out, by taking a look at the image above, our workflow won't return anything. The last step before finishing is about incrementing the history of the employee's assignments, not returning anything.
 
 So, our use case is an example of ConsumerUseCase.
+
+<br>
+
+## Let there be PromotingEmployeeUseCase
+
+Since we already know the type of our use case, we can start creating it. It is done by following the steps below:
+
+- Create a package with the name "use_cases" at the root of your group ID package: <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/use_cases_package.png)
+ <br>
+ 
+- Inside of it, create another package, this time called after the name of your use case: <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/promoting_employee_use_case_package.png)
+ <br>
+ 
+- Inside of the newest package, create a class to represent the use case contract: <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecase.png)
+ <br>
+ 
+- Make the use case class extend its respective UseCase type (in this case, ConsumerUseCase): <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/extending-consumer-use-case.png)
+ <br>
+ 
+- Specify the input type (since it is a use case which receives input, a type for it must be defined). Create new packages inside your use case package called "io.inputs" and then create the class for your use case input there: <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecaseinputtype.png)
+
+
