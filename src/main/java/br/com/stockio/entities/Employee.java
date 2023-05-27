@@ -25,7 +25,11 @@ public abstract class Employee implements Entity {
 
     public abstract void assumeNewRole(Role newRole);
     public abstract Optional<RoleAssignment> getCurrentRoleAssignment();
-
     public abstract void endCurrentAssignment();
 
 }
+
+
+
+
+
