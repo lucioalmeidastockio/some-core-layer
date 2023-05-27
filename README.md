@@ -195,10 +195,20 @@ Each entity has an abstract representation and its respective concrete actual im
 
 - Employee
   - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/employeeentityabstraction.png) <br>
+
+
   - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/employeeentityimplementation.png) <br>
+
+
 - RoleAssignment
   - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleassignmententityabstraction.png) <br>
+
+
   - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleassignmententityimplementation.png) <br>
+
+
 - Role
   - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleentityabstraction.png) <br>
+
+
   - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleentityimplementation.png) <br>
