@@ -193,21 +193,21 @@ The Role entity is just a model with some attributes. No behavior is within it.
 
 Each entity has an abstract representation and its respective concrete actual implementation. Take a look at each of them below:
 
-- Employee
+- #### Employee
   - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/employeeentityabstraction.png) <br>
 
 
   - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/employeeentityimplementation.png) <br>
 
 
-- RoleAssignment
+- #### RoleAssignment
   - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleassignmententityabstraction.png) <br>
 
 
   - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleassignmententityimplementation.png) <br>
 
 
-- Role
+- #### Role
   - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleentityabstraction.png) <br>
 
 
