@@ -76,5 +76,17 @@ Since we already know the type of our use case, we can start creating it. It is 
  
 - Specify the [input type](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/PromotingEmployeeUseCase.java#L4) (since it is a use case which receives input, a type for it must be defined). Create [new packages inside your use case package called "io.inputs"](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/io/inputs) and then create the [class for your use case input there](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/io/inputs/PromotingEmployeeUseCaseInput.java): <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecaseinputtype.png)
+<br>
 
+- Implement the [protected constructor of the UseCase class](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/PromotingEmployeeUseCase.java#L11). It will receive an instance that implements the [Logger interface](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/loggers/Logger.java) (in order to make a logger  instance accessible inside your use case object without making it dirty by knowing which implementation you are using): <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/constructorloggerparam.png)
+<br>
+
+- At the super section, you will pass an instance of [UseCaseMetadata](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/use_cases/metadata/UseCaseMetadata.java), which is to inform details about your use case for further use at the building phase, along with the Logger instance received through the constructor args: <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/super.png)
+<br>
+
+- Example of creating an instance of UseCaseMetadata below. (I decided to declare the use case as of open access, but you could decide to make it of protected access if you'd want to let the primary adapter layer know that it should implement some security layer for accessing the use case execution. The description I gave, by the way, was very simple... you could make a richer one.) <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasemetadata.png)
+<br>
 
