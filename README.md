@@ -179,5 +179,11 @@ Take a look:
 <br>
 
 ### RoleAssignment
+The RoleAssignment bit of it represents the relation between an employee and a role, having the time the relation started and, if being the case, the time when the relation ended. It is in its implementation that the field of 'endingMoment' is filled with the moment of the assignment end when the method is called.
+
+See it for yourself:
+
+- [Filing the ending moment field with the current date](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/RoleAssignmentImplementation.java#L10) <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/endassignmentmethod.png)
 
 ### Role
