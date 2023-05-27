@@ -1,2 +1,2 @@
 # some-core-layer
-Example for using the clean-arch-enablers lib.
+Documentation in progress at [1-example-documentation#some-core-layer](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#some-core-layer)
