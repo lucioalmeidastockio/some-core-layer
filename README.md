@@ -166,13 +166,11 @@ It is pure logic. Pure business rule. It is the perfect fit for business entitie
 
 ![entities](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/Entities.png)
 
-<br>
-
-One way of representing entities in code is to create a package called "entities" at the same level as "use_cases". At its root the modeling and abstract contracts of each entity would be created as well as a subpackage for their implementations. Once done that, another subpackage called "factories" would be created at the same level as the "implementations" subpackage, and there the factories to each entity would be created, becoming the official way of instantiating entity objects without referring directly to their concrete implementations.
+One way of representing entities in code would be to create a package called "entities" at the same level as "use_cases". At its root level the modeling and abstract contracts of each entity would be created as well as a subpackage for their implementations. Once done that, another subpackage called "factories" would be created at the same level as the "implementations" subpackage, and there the factories to each entity would be created, then becoming the official manner of instantiating entity objects without having to directly refer to their concrete implementations.
 
 ![entity_package](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/entitiespackage.png)
 
-That being stated, let's jump into the entities themselves.
+That being stated, let's jump into the entities themselves as code.
 
 ### [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
 The Employee wil be an entity with some behaviors: assuming a new role, which implies in ending a current assignment if any is present, which makes it required to exist a method for retrieving the current assignment.
