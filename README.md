@@ -14,6 +14,8 @@ The use case workflow is as the represented below:
 
 Let's break it down!
 
+<br>
+
 ## First things first
 First of all we need to define what kind of UseCase it will be. Will it accept inputs? Will it return anything as output?
 
