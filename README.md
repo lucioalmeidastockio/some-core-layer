@@ -146,7 +146,11 @@ Some parts of our workflow require us to make contact with components from the _
 
 How is it possible?
 
+<br>
+
 ### Abstraction, baby! Let's use Ports!
+
+<br>
 
 Each time we need to make contact with some external component, we will just create a Port for that. Ports will be a layer of abstraction in which we will just trust whoever implements them will do it rightly. If our objective is to retrieve an employee by its ID, we'll create a Port for that. If the actual retrievement will be done by fetching an API or querying a table in a database directly, that's none of the use case logical core layer's business. We'll just rely on Ports.
 
@@ -158,7 +162,11 @@ Smells like entity spirit.
 
 It is pure logic. Pure business rule. It is the perfect fit for business entities. By the way, we didn't even mention them yet, but they are right there, in front of us, screaming to be noticed. So let's take a look at how they could take form in our code.
 
+<br>
+
 ### Time for Business Entities!
+
+<br>
 
 - [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
 - [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
