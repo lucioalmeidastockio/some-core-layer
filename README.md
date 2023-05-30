@@ -148,7 +148,7 @@ Each time we need to make contact with some external component, we will just cre
 
 So to validate if the employee really exists, what we are going to do is to create a Port for retrieving an optional of employee by its ID. The same will be done for the role's preexistence validation.
 
-But let's get lowprofile about it right now. What about the other part of the flow? The part which was described as being possible to be done internally, at the logical core layer once the data would've been already retrieved. That is: finishing the current role assignment of an employee, assigning a new role and incrementing the employee's history of assingments. Of course at some point we'll need to persist those changes, but to make those changes in the first place we don't need to contact any external component once the data is present.
+But let's get lowprofile about it right now. What about the other part of the flow? The part which was described as being possible to be done internally once the data would've been already retrieved. That would be: finishing the current role assignment of an employee, assigning a new role and incrementing the employee's history of assingments. Of course at some point we'll need to persist those changes, but to make those changes in the first place we don't need to contact any external component once the data is present.
 
 Smells like entity spirit.
 
