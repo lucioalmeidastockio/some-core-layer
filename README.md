@@ -237,4 +237,12 @@ They follow the same pattern of Use Case types in regards to I/O specifications:
 | SupplierPort | ✖️ | ✔️ |
 | RunnablePort | ✖️ | ✖️ |
 
+<br>
 
+- EmployeeRetrievementByIdPort (FunctionPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/functionport1.png) <br> Receives the employee ID and returns an optional of employee. <br>
+
+- RoleRetrievementByIdPort (FunctionPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/functionport2.png) <br> Receives the role ID and returns an optional of role. <br>
+
+- CareerPathRetrievementPort (SupplierPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/supplierport.png) <br> Returns a map of role ID per roles that are allowed for succession. <br>
+
+- EmployeeAssignmentUpdatePort (ConsumerPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/consumerport.png) <br> Receives the employee to update it.
