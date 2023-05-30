@@ -147,7 +147,9 @@ But let's get lowprofile about it right now. What about the other part of the fl
 
 Smells like entity spirit.
 
-It seems to be pure logic. Pure business rule. It is the perfect fit for business entities. Indeed, we didn't even mention them yet, but they are right there, in front of us. So let's take a look at how they could take form:
+It seems to be pure logic. Pure business rule. It is the perfect fit for business entities. Indeed, we didn't even mention them yet, but they are right there, in front of us. So let's take a look at how they could take form.
+
+## Time for Business Entities!
 
 - [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
 - [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
@@ -160,7 +162,7 @@ It seems to be pure logic. Pure business rule. It is the perfect fit for busines
 <br>
 
 ### Employee
-The employee wil be an entity which has some behaviors: assuming a new role, getting the current assignment if any present and ending a current assignment if any.
+The Employee wil be an entity that has some behaviors: assuming a new role, which implies in ending a current assignment if any is present, which makes it required to exist a method for retrieving the current assignment if there is any.
 
 It is inside of the [implementation of the Employee entity](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java) that this logic will be at!
 
@@ -170,12 +172,12 @@ Take a look:
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/assumingnewrole.png)
 <br>
 
-- [Getting current role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L27) <br>
-![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/gettingcurrentroleifany.png)
-<br>
-
 - [Ending current assignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L34) <br>
 ![](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/images/endingcurrentassingmentifany.png)
+<br>
+
+- [Getting current role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L27) <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/gettingcurrentroleifany.png)
 <br>
 
 ### RoleAssignment
@@ -187,3 +189,28 @@ See it for yourself:
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/endassignmentmethod.png)
 
 ### Role
+The Role entity is just a model with some attributes. No behavior is within it.
+
+----
+
+Each entity has an abstract representation and its respective concrete actual implementation. Take a look at each of them below:
+
+- #### Employee
+  - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/employeeentityabstraction.png) <br>
+
+
+  - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/employeeentityimplementation.png) <br>
+
+
+- #### RoleAssignment
+  - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleassignmententityabstraction.png) <br>
+
+
+  - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleassignmententityimplementation.png) <br>
+
+
+- #### Role
+  - Abstract <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleentityabstraction.png) <br>
+
+
+  - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleentityimplementation.png) <br>
