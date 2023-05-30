@@ -77,9 +77,7 @@ Since we already know the type of our use case, we can start creating it. It is 
 
 - At the super section, you will pass an instance of [UseCaseMetadata](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/use_cases/metadata/UseCaseMetadata.java), which is to inform details about your use case for further use at the building phase, along with the Logger instance received through the constructor args: <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/super.png)
-<br>
-
-- Example of creating an instance of UseCaseMetadata below. (I decided to declare the use case as of open access, but you could decide to make it of protected access if you'd want to let the primary adapter layer know that it should implement some security layer for accessing the use case execution. The description I gave, by the way, was very simple... you could make a richer one.) <br>
+  - Here's an example of how to create an instance of UseCaseMetadata. (I decided to declare the use case as one of _open access_, but you could decide to make it of _protected access_ if you'd want to let the primary adapter layer know that it should implement some security layer for accessing the use case execution. The description I gave, by the way, was very simple... you could make a richer one.) <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasemetadata.png)
 <br>
 
