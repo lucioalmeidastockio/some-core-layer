@@ -67,3 +67,6 @@ public class PromotingEmployeeUseCaseImplementation extends PromotingEmployeeUse
             throw new RoleNotAllowedException(role);
     }
 }
+
+
+
