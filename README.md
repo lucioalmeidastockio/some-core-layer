@@ -168,7 +168,7 @@ It seems to be pure logic. Pure business rule. It is the perfect fit for busines
 
 <br>
 
-Create a package called "entities" at the same lavel as "use_cases". At its root create the modeling and contracts of each entity. Then create a subpackage for the implementations, implementing each abstract entity. Once that is done, create another subpackage called "factories" the same level as "implementations". There it is supposed to be created the factories to each entity, which will be official way to instantiate our entity objects without refering directly to the concrete classes.
+Create a package called "entities" at the same lavel as "use_cases". At its root create the modeling and contracts of each entity. Then create a subpackage for the implementations, implementing each abstract entity. Once that is done, create another subpackage called "factories" the same level as "implementations". There it is supposed to be created the factories to each entity, which will be the official way to instantiate our entity objects without refering directly to their concrete classes.
 
 ![entity_package](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/entitiespackage.png)
 
