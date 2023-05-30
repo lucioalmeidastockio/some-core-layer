@@ -257,3 +257,10 @@ They follow the same pattern of Use Case types in regards to I/O specifications:
 
 - EmployeeAssignmentUpdatePort (ConsumerPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/consumerport.png) <br> _Receives the employee to update it._ <br>
 
+That is the first half of the implementation. Let's dive into the second half of it:
+
+<br>
+
+- Second half of our use case implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecaseinternallogic.png)
+
+
