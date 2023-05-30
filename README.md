@@ -154,7 +154,7 @@ Smells like entity spirit.
 
 It is pure logic. Pure business rule. It is the perfect fit for business entities. By the way, we didn't even mention them yet, but they are right there, in front of us, screaming to be noticed. So let's take a look at how they could take form in our code.
 
-## Time for Business Entities!
+### Time for Business Entities!
 
 - [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
 - [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
