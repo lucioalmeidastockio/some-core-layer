@@ -147,7 +147,9 @@ But let's get lowprofile about it right now. What about the other part of the fl
 
 Smells like entity spirit.
 
-It seems to be pure logic. Pure business rule. It is the perfect fit for business entities. Indeed, we didn't even mention them yet, but they are right there, in front of us. So let's take a look at how they could take form:
+It seems to be pure logic. Pure business rule. It is the perfect fit for business entities. Indeed, we didn't even mention them yet, but they are right there, in front of us. So let's take a look at how they could take form.
+
+## Time for Business Entities!
 
 - [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
 - [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
