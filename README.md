@@ -175,7 +175,7 @@ That being stated, let's jump into the entities themselves as code.
 ### 1. [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
 The Employee wil be an entity with some behaviors: assuming a new role, which implies in ending a current assignment if any is present, which makes it required to exist a method for retrieving the current assignment.
 
-It is inside of the [implementation of the Employee entity](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java) that this logic will be at!
+It is inside of the [Employee entity implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java) that this logic will be at!
 
 Take a look:
 
