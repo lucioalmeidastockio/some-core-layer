@@ -239,7 +239,7 @@ They follow the same pattern of Use Case types in regards to I/O specifications:
 
 <br>
 
-- EmployeeRetrievementByIdPort (FunctionPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/functionport1.png) <br> _Receives the employee ID and returns an optional of employee. _<br>
+- EmployeeRetrievementByIdPort (FunctionPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/functionport1.png) <br> _Receives the employee ID and returns an optional of employee._ <br>
 
 - RoleRetrievementByIdPort (FunctionPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/functionport2.png) <br> _Receives the role ID and returns an optional of role._ <br>
 
