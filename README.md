@@ -146,8 +146,6 @@ Some parts of our workflow require us to make contact with components from the _
 
 How is it possible?
 
-<br>
-
 ### Abstraction, baby! Let's use Ports!
 
 <br>
@@ -161,8 +159,6 @@ But let's get lowprofile about it right now. What about the other part of the fl
 Smells like entity spirit.
 
 It is pure logic. Pure business rule. It is the perfect fit for business entities. By the way, we didn't even mention them yet, but they are right there, in front of us, screaming to be noticed. So let's take a look at how they could take form in our code.
-
-<br>
 
 ### Time for Business Entities!
 
