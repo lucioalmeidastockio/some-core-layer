@@ -38,6 +38,13 @@ Turns out, by taking a look at the image above, our workflow won't return anythi
 
 So, our use case is an example of ConsumerUseCase.
 
+| Use Case Type | (I)nput | (O)utput |
+| :---: | :---: | :---: |
+| FunctionUseCase | ✔️ | ✔️ |
+| ConsumerUseCase | ✔️ | ✖️ |
+| SupplierUseCase | ✖️ | ✔️ |
+| RunnableUseCase | ✖️ | ✖️ |
+
 <br>
 
 ## Let there be PromotingEmployeeUseCase
@@ -214,3 +221,18 @@ Each entity has an abstract representation and its respective concrete actual im
 
 
   - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleentityimplementation.png) <br>
+
+Having said and done all of the above, let's see how the Use Case implementation takes place and orchestrates the entities in order to accomplish the final objective:
+
+- First half of our use case implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/firsthalfusecaseimplementation-injectingstuff.png) <br> 
+
+If you actually read the code in the image above, you noticed that we have a couple of Port instances being injected in our use case. If you are asking yourself how does a Port look like, remember: a port is just a contract! They follow the same pattern of Use Case types in regards to I/O specifications:
+
+| Port Type | (I)nput | (O)utput |
+| :---: | :---: | :---: |
+| FunctionPort | ✔️ | ✔️ |
+| ConsumerPort | ✔️ | ✖️ |
+| SupplierPort | ✖️ | ✔️ |
+| RunnablePort | ✖️ | ✖️ |
+
+
