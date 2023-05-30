@@ -172,12 +172,12 @@ Take a look:
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/assumingnewrole.png)
 <br>
 
-- [Getting current role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L27) <br>
-![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/gettingcurrentroleifany.png)
-<br>
-
 - [Ending current assignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L34) <br>
 ![](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/images/endingcurrentassingmentifany.png)
+<br>
+
+- [Getting current role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java#L27) <br>
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/gettingcurrentroleifany.png)
 <br>
 
 ### RoleAssignment
