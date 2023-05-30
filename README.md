@@ -84,6 +84,8 @@ Since we already know the type of our use case, we can start creating it. It is 
 That's it for the contract of our use case. Take a look at the full picture of our class: <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/fullpicusecasecontract.png)
 
+<br>
+
 ## Input details
 
 We've created the type for our input in our use case contract. Now it's time to define what constitutes the input itself. Let's see again what the workflow told us about the input data supposed to be received:
