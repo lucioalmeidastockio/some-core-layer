@@ -226,7 +226,9 @@ Having said and done all of the above, let's see how the Use Case implementation
 
 - First half of our use case implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/firsthalfusecaseimplementation-injectingstuff.png) <br> 
 
-If you actually read the code in the image above, you noticed that we have a couple of Port instances being injected in our use case. If you are asking yourself how does a Port look like, remember: a port is just a contract! They follow the same pattern of Use Case types in regards to I/O specifications:
+If you actually read the code in the image above, you noticed that we have a couple of Port instances being injected in our use case. If you are asking yourself how does a Port look like, remember: a port is just a contract! 
+
+They follow the same pattern of Use Case types in regards to I/O specifications:
 
 | Port Type | (I)nput | (O)utput |
 | :---: | :---: | :---: |
