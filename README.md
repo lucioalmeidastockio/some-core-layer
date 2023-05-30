@@ -164,12 +164,6 @@ It is pure logic. Pure business rule. It is the perfect fit for business entitie
 
 <br>
 
-- [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
-- [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
-- [Role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Role.java)
-
-<br>
-
 ![entities](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/Entities.png)
 
 <br>
@@ -180,7 +174,7 @@ One way of representing entities in code is to create a package called "entities
 
 That being stated, let's jump into the entities themselves.
 
-### Employee
+### [Employee](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Employee.java)
 The Employee wil be an entity with some behaviors: assuming a new role, which implies in ending a current assignment if any is present, which makes it required to exist a method for retrieving the current assignment.
 
 It is inside of the [implementation of the Employee entity](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java) that this logic will be at!
@@ -199,7 +193,7 @@ Take a look:
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/gettingcurrentroleifany.png)
 <br>
 
-### RoleAssignment
+### [RoleAssignment](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/RoleAssignment.java)
 The RoleAssignment represents the relation between an employee and a role, having the time the relation started and, if being the case, the time when the relation ended. It is in its implementation that the field of 'endingMoment' is filled with the moment of the assignment closure when the method is called.
 
 See it for yourself:
@@ -207,7 +201,7 @@ See it for yourself:
 - [Filing the ending moment field with the current date](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/RoleAssignmentImplementation.java#L10) <br>
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/endassignmentmethod.png)
 
-### Role
+### [Role](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/Role.java)
 The Role entity is just a model with some attributes. No behavior is within it.
 
 ----
