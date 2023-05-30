@@ -162,7 +162,7 @@ It seems to be pure logic. Pure business rule. It is the perfect fit for busines
 <br>
 
 ### Employee
-The employee wil be an entity which has some behaviors: assuming a new role, getting the current assignment if any present and ending a current assignment if any.
+The Employee wil be an entity which has some behaviors: assuming a new role, getting the current assignment if any present and ending a current assignment if any.
 
 It is inside of the [implementation of the Employee entity](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java) that this logic will be at!
 
