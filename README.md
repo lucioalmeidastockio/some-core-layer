@@ -128,7 +128,7 @@ That's it. Now those fields are required in order for your use case to execute.
 
 ## Use Case Implementation
 
-Getting past the point of defining the use case type and establishing the input model, it's time to go into the specifics of the rules of our use case execution.
+Getting past the point of defining the use case type and establishing the input model, it's time to go into the specifics of use case execution rules.
 
 Let's take another look at our workflow:
 
