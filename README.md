@@ -1,6 +1,6 @@
 # some-core-layer
 
-This is an example of how to use the [clean-arch-enablers](https://github.com/lucioalmeidastockio/clean-arch-enablers) library in your Java app in order to make it follow the Clean Architecture concepts.
+This is step-by-step breakdown example of how to use the [clean-arch-enablers](https://github.com/lucioalmeidastockio/clean-arch-enablers) library in your Java app. Understanding and applying the practices described in this text will enable your code to meet the Clean Architecture principles at ease.
 
 For our example, we will consider the use case of promoting an employee, supposing we are developing an employee management system.
 
@@ -15,9 +15,9 @@ The use case workflow is as the represented below:
 Let's break it down!
 
 ## First things first
-First of all we need to define what kind of UseCase our use case will be. Will it accept inputs? Will it return anything as output?
+First of all we need to define what kind of UseCase it will be. Will it accept inputs? Will it return anything as output?
 
-It could be the case our use case would:
+It could be the case it would:
 
 - Have input and output ([_function use case type_](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/use_cases/specifics/functions/FunctionUseCase.java))
 - Have only input ([_consumer use case type_](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/use_cases/specifics/consumers/ConsumerUseCase.java))
@@ -32,7 +32,7 @@ So, what will it be? To answer that, let's take a look at some important parts o
 
 <br>
 
-Our use case execution starts receiving the ID of the employee being promoted and the ID of the role to which the employee will be assigned to. That by itself indicates our use case accepts input, so it will be either a function or a consumer use case. It will depend on our workflow returning something at the end of the execution.
+Our use case execution starts receiving the ID of the employee being promoted and the ID of the role to which the employee will be assigned to. That by itself indicates our use case accepts input, so it will be either a function or a consumer use case. The final conclusion will depend on our workflow returning something at the end of the execution.
 
 Turns out, by taking a look at the image above, our workflow won't return anything. The last step before finishing is about incrementing the history of the employee's assignments, not returning anything.
 
@@ -96,7 +96,7 @@ We've created the type for our input in our use case contract. Now it's time to 
 
 <br>
 
-It says to receive the ID of the employee and the ID of the role. That is what composes our input as a whole. Those are the fields our use case input type will have.
+It says to receive the ID of the employee and the ID of the role. That is what composes our input as a whole. So, those are the fields our use case input type will have.
 
 <br>
 
@@ -114,7 +114,7 @@ Does the workflow tell us anything more about the input? Well, yes. It says both
 
 How to embody that rule to our code?
 
-You could implement a validation yourself for checking whether or not both values are present, but that is not necessary. Your use case instance will automatically run a validation onto your input object before executing its inner logic. If you define some fields as required and they come null it will result in an instance of [InputMappedException](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/mapped_exceptions/specifics/InputMappedException.java) being thrown along with a message specifying which field triggered such behavior.
+You could implement a validation yourself for checking whether or not both values are present, but that is not necessary. Your use case instance will automatically run a validation onto your input object before executing its inner logic. If you define some fields as required and they come null into your use case object it will result in an instance of [InputMappedException](https://github.com/lucioalmeidastockio/clean-arch-enablers/blob/main/src/main/java/br/com/stockio/mapped_exceptions/specifics/InputMappedException.java) being thrown along with a message specifying what triggered such behavior.
 
 Using this approach your input class would look like this:
 
@@ -130,7 +130,7 @@ That's it. Now those fields are required in order for your use case to execute.
 
 ## Use Case Implementation
 
-Getting past the point of validating input data, it's time to go into the specifics of the rules of our use case execution.
+Getting past the point of defining the use case type and establishing the input model, it's time to go into the specifics of the rules of our use case execution.
 
 Let's take another look at our workflow:
 
@@ -140,21 +140,21 @@ Let's take another look at our workflow:
 
 <br>
 
-Some parts of our workflow require us to make contact with components from the _external world_, such as databases or other services. That means some kind of specific technology, library or framework will be used in order to accomplish that. The problem with that is we can't make our use case layer coupled to the set of technologies we chose to use at the moment. That is because if tomorrow, next week, next month or next year we decide to change our choice we must be able to get it done without having to change anything in our use case layer. 
+Some parts of our workflow require us to make contact with components from the _external world_, such as databases or other services. That means some kind of specific technology, library or framework will be used in order to accomplish that. The problem with that is the fact we can't make our use case layer coupled to the set of technologies we chose to use at a certain moment. That is because if tomorrow, next week, next month or next year we decide to change our decision we must be able to get it done without having to change anything in our use case logical core layer. 
 
 How is it possible?
 
 ### Abstraction, baby! Let's use Ports!
 
-Each time we need to make contact with some external component, we will just create a Port for that. Ports will be a layer of abstraction in which we will just trust whoever implements them will do it rightly. If our objective is to retrieve an employee by its ID, we'll create a Port for that. If the actual retrievement will be done by fetching an API or querying a table in a database directly, that's none of the UseCase layer's business. We'll just rely on the Ports.
+Each time we need to make contact with some external component, we will just create a Port for that. Ports will be a layer of abstraction in which we will just trust whoever implements them will do it rightly. If our objective is to retrieve an employee by its ID, we'll create a Port for that. If the actual retrievement will be done by fetching an API or querying a table in a database directly, that's none of the use case logical core layer's business. We'll just rely on Ports.
 
-So to validate if the employee really exists, what we are going to do is to create a Port for retrieving the employee by its ID. The same will be done for the role's preexistence validation.
+So to validate if the employee really exists, what we are going to do is to create a Port for retrieving an optional of employee by its ID. The same will be done for the role's preexistence validation.
 
-But let's get lowprofile about it right now. What about the other part of the flow? The part which was described as being possible to be done internally once the data would've been already retrieved. That part regards to the logics that involve finishing the current role assignment, assigning a new role to the employee and incrementing the employee's history of assingments. Of course at some point we'll need to persist those changes, but to make those changes in the first place we don't need to contact any external component once the data is present.
+But let's get lowprofile about it right now. What about the other part of the flow? The part which was described as being possible to be done internally, at the logical core layer once the data would've been already retrieved. That is: finishing the current role assignment of an employee, assigning a new role and incrementing the employee's history of assingments. Of course at some point we'll need to persist those changes, but to make those changes in the first place we don't need to contact any external component once the data is present.
 
 Smells like entity spirit.
 
-It seems to be pure logic. Pure business rule. It is the perfect fit for business entities. Indeed, we didn't even mention them yet, but they are right there, in front of us. So let's take a look at how they could take form.
+It is pure logic. Pure business rule. It is the perfect fit for business entities. By the way, we didn't even mention them yet, but they are right there, in front of us, screaming to be noticed. So let's take a look at how they could take form in our code.
 
 ## Time for Business Entities!
 
@@ -168,12 +168,14 @@ It seems to be pure logic. Pure business rule. It is the perfect fit for busines
 
 <br>
 
-Create a package called "entities" at the same level as "use_cases". At its root create the modeling and contracts of each entity. Then create a subpackage for the implementations, implementing each abstract entity. Once that is done, create another subpackage called "factories" at the same level as "implementations". There it is supposed to be created the factories to each entity, which will be the official way to instantiate the entity objects without refering directly to their concrete classes.
+One way of representing entities in code is to create a package called "entities" at the same level as "use_cases". At its root the modeling and abstract contracts of each entity would be created as well as a subpackage for their implementations. Once done that, another subpackage called "factories" would be created at the same level as the "implementations" subpackage, and there the factories to each entity would be created, becoming the official way of instantiating entity objects without referring directly to their concrete implementations.
 
 ![entity_package](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/entitiespackage.png)
 
+That being stated, let's jump into the entities themselves.
+
 ### Employee
-The Employee wil be an entity that has some behaviors: assuming a new role, which implies in ending a current assignment if any is present, which makes it required to exist a method for retrieving the current assignment if there is any.
+The Employee wil be an entity with some behaviors: assuming a new role, which implies in ending a current assignment if any is present, which makes it required to exist a method for retrieving the current assignment.
 
 It is inside of the [implementation of the Employee entity](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/entities/implementations/EmployeeImplementation.java) that this logic will be at!
 
@@ -192,7 +194,7 @@ Take a look:
 <br>
 
 ### RoleAssignment
-The RoleAssignment bit of it represents the relation between an employee and a role, having the time the relation started and, if being the case, the time when the relation ended. It is in its implementation that the field of 'endingMoment' is filled with the moment of the assignment end when the method is called.
+The RoleAssignment represents the relation between an employee and a role, having the time the relation started and, if being the case, the time when the relation ended. It is in its implementation that the field of 'endingMoment' is filled with the moment of the assignment closure when the method is called.
 
 See it for yourself:
 
@@ -230,9 +232,9 @@ Having said and done all of the above, let's see how the Use Case implementation
 
 - First half of our use case implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/firsthalfusecaseimplementation-injectingstuff.png) <br> 
 
-If you actually read the code in the image above, you noticed that we have a couple of Port instances being injected in our use case. If you are asking yourself how does a Port look like, remember: a port is just a contract! 
+If you actually read the code in the image above, you noticed that we have a couple of Port instances being injected in our use case. If you are asking yourself how does a Port look like, remember: a port is just a contract, an abstraction! 
 
-They follow the same pattern of Use Case types in regards to I/O specifications:
+Their contracts follow the same pattern of Use Case types in regards to I/O specifications:
 
 | Port Type | (I)nput | (O)utput |
 | :---: | :---: | :---: |
