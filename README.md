@@ -1,6 +1,6 @@
 # some-core-layer
 
-This is step-by-step breakdown example of how to use the [clean-arch-enablers](https://github.com/lucioalmeidastockio/clean-arch-enablers) library in your Java app. Understanding and applying the practices described in this text will enable your code to meet the Clean Architecture principles at ease.
+This is a step-by-step breakdown example of how to use the [clean-arch-enablers](https://github.com/lucioalmeidastockio/clean-arch-enablers) library in your Java app. Understanding and applying the practices described in this text will enable your code to meet the Clean Architecture principles at ease.
 
 For our example, we will consider the use case of promoting an employee, supposing we are developing an employee management system.
 
