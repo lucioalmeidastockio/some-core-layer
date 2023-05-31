@@ -1,4 +1,4 @@
-## Summary
+## Summary 📑
 - [What is this?](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#what-is-this)
 - [First things first](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#first-things-first)
 - [Let there be PromotingEmployeeUseCase](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#let-there-be-promotingemployeeusecase)
@@ -11,7 +11,7 @@
 
 <br>
 
-## What is this?
+## What is this? 🤔
 
 This is a step-by-step breakdown example of how to use the [clean-arch-enablers](https://github.com/lucioalmeidastockio/clean-arch-enablers) library in your Java app. Understanding and applying the practices described in this text will enable your code to meet the Clean Architecture principles at ease.
 
@@ -29,7 +29,7 @@ Let's break it down!
 
 <br>
 
-## First things first
+## First things first☝️
 First of all we need to define what kind of UseCase it will be. Will it accept inputs? Will it return anything as output?
 
 It could be the case it would:
@@ -62,7 +62,7 @@ So, our use case is an example of ConsumerUseCase.
 
 <br>
 
-## Let there be PromotingEmployeeUseCase
+## Let there be PromotingEmployeeUseCase 💥
 
 Since we already know the type of our use case, we can start creating it. It is done by following the steps below:
 
@@ -101,7 +101,7 @@ That's it for the contract of our use case. Take a look at the full picture of o
 
 <br>
 
-## Input details
+## Input details ⤵️
 
 We've created the type for our input in our use case contract. Now it's time to define what constitutes the input itself. Let's see again what the workflow told us about the input data supposed to be received:
 
@@ -143,7 +143,7 @@ That's it. Now those fields are required in order for your use case to execute.
 
 <br>
 
-## Use Case Implementation
+## Use Case Implementation ▶️
 
 Getting past the point of defining the use case type and establishing the input model, it's time to go into the specifics of our use case execution rules.
 
@@ -159,7 +159,7 @@ Some parts of our workflow require us to make contact with components from the _
 
 How is it possible?
 
-### Abstraction, baby! Let's use Ports!
+### Abstraction, baby! Let's use Ports! 🚪
 
 <br>
 
@@ -173,7 +173,7 @@ Smells like entity spirit.
 
 It is pure logic. Pure business rule. It is the perfect fit for business entities. By the way, we didn't even mention them yet, but they are right there, in front of us, screaming to be noticed. So let's take a look at how they could take form in our code.
 
-### Time for Business Entities!
+### Time for Business Entities! 🕴️
 
 <br>
 
@@ -241,7 +241,7 @@ Each entity has an abstract representation and its respective concrete actual im
 
 Having said and done all of the above, let's see how the Use Case implementation takes place and orchestrates the entities in order to accomplish the final objective.
 
-### First half of our use case implementation:
+### First half of our use case implementation 🌗
 
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/firsthalfusecaseimplementation-injectingstuff.png) <br> 
 
@@ -274,7 +274,7 @@ Their contracts follow the same pattern of Use Case types in regards to I/O spec
 
 That is the first half of the implementation. Let's dive into the second half of it.
 
-### Second half of our use case implementation:
+### Second half of our use case implementation 🌓
 
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecaseinternallogic.png)
 
