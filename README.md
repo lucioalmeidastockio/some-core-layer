@@ -1,5 +1,20 @@
 # some-core-layer
 
+## Summary
+- What is this?
+- [First things first](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#first-things-first)
+- [Let there be PromotingEmployeeUseCase](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#let-there-be-promotingemployeeusecase)
+- [Input details](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#input-details)
+- [Use Case Implementation](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#use-case-implementation)
+   - [Abstraction, baby! Let's use Ports!](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#abstraction-baby-lets-use-ports)
+   - [Time for Business Entities!](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#time-for-business-entities)
+   - [First half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#first-half-of-our-use-case-implementation)
+   - [Second half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#second-half-of-our-use-case-implementation)
+
+<br>
+
+## What is this?
+
 This is a step-by-step breakdown example of how to use the [clean-arch-enablers](https://github.com/lucioalmeidastockio/clean-arch-enablers) library in your Java app. Understanding and applying the practices described in this text will enable your code to meet the Clean Architecture principles at ease.
 
 For our example, we will consider the use case of promoting an employee, supposing we are developing an employee management system.
@@ -13,18 +28,6 @@ The use case workflow is as the represented below:
 <br>
 
 Let's break it down!
-
-<br>
-
-## Summary
-- [First things first](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#first-things-first)
-- [Let there be PromotingEmployeeUseCase](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#let-there-be-promotingemployeeusecase)
-- [Input details](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#input-details)
-- [Use Case Implementation](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#use-case-implementation)
-   - [Abstraction, baby! Let's use Ports!](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#abstraction-baby-lets-use-ports)
-   - [Time for Business Entities!](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#time-for-business-entities)
-   - [First half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#first-half-of-our-use-case-implementation)
-   - [Second half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#second-half-of-our-use-case-implementation)
 
 <br>
 
