@@ -1,5 +1,5 @@
 ## Summary
-- What is this?
+- [What is this?](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#what-is-this)
 - [First things first](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#first-things-first)
 - [Let there be PromotingEmployeeUseCase](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#let-there-be-promotingemployeeusecase)
 - [Input details](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#input-details)
