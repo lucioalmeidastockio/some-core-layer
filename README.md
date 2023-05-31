@@ -1,5 +1,3 @@
-# some-core-layer
-
 ## Summary
 - What is this?
 - [First things first](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#first-things-first)
