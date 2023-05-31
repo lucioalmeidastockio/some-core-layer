@@ -16,6 +16,18 @@ Let's break it down!
 
 <br>
 
+## Summary
+- [First things first](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#first-things-first)
+- [Let there be PromotingEmployeeUseCase](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#let-there-be-promotingemployeeusecase)
+- [Input details](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#input-details)
+- [Use Case Implementation](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#use-case-implementation)
+   - [Abstraction, baby! Let's use Ports!](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#abstraction-baby-lets-use-ports)
+   - [Time for Business Entities!](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#time-for-business-entities)
+   - [First half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#first-half-of-our-use-case-implementation)
+   - [Second half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#second-half-of-our-use-case-implementation)
+
+<br>
+
 ## First things first
 First of all we need to define what kind of UseCase it will be. Will it accept inputs? Will it return anything as output?
 
