@@ -226,9 +226,11 @@ Each entity has an abstract representation and its respective concrete actual im
 
   - Implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/roleentityimplementation.png) <br>
 
-Having said and done all of the above, let's see how the Use Case implementation takes place and orchestrates the entities in order to accomplish the final objective:
+Having said and done all of the above, let's see how the Use Case implementation takes place and orchestrates the entities in order to accomplish the final objective.
 
-- First half of our use case implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/firsthalfusecaseimplementation-injectingstuff.png) <br> 
+### First half of our use case implementation:
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/firsthalfusecaseimplementation-injectingstuff.png) <br> 
 
 If you actually read the code in the image above, you noticed that we have a couple of Port instances being injected in our use case. If you are asking yourself how does a Port look like, remember: a port is just a contract, an abstraction! 
 
@@ -257,11 +259,11 @@ Their contracts follow the same pattern of Use Case types in regards to I/O spec
 
 - EmployeeAssignmentUpdatePort (ConsumerPort) <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/consumerport.png) <br> _Receives the employee to update it._ <br>
 
-That is the first half of the implementation. Let's dive into the second half of it:
+That is the first half of the implementation. Let's dive into the second half of it.
 
-<br>
+### Second half of our use case implementation:
 
-- Second half of our use case implementation <br> ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecaseinternallogic.png)
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecaseinternallogic.png)
 
 1. We try to retrieve the employee. If the port adapter instance returns an empty optional, we assume the employee doesn't exist at the datasource, so we throw EmployeeNotFoundByIdException, which extends NotFoundMappedException (which would map to a 404 status code if the use case would've been dispatched via a REST Endpoint). It is important to whenever throwing custom exceptions making sure they extend some MappedException (InputMappedException, NotFoundMappedException or InternalMappedException), because when your use case instance catches an exception being thrown during its execution, if the exception is a subtype of MappedException it understands it was intended to happen, it assumes it is part of your design, so it will just let it pass through so some custom handler of yours handles it. Otherwise, if the exception is raw, not extending any type of MappedException, the use case instance will consider it as an unexpected exception, so it will catch it and handle it as something going unexpectedly wrong, which would be more like, for example, a unmapped 5xx error than a previously mapped 5xx or 4xx.
 
