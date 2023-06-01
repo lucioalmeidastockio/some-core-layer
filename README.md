@@ -11,6 +11,14 @@
 - [Use case factory](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#use-case-factory-)
    - [Factory package](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#factory-package-)
    - [Factory class](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#factory-class-%EF%B8%8F)
+- [Dispatching the use case with its dependencies](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#dispatching-the-use-case-with-its-dependencies-)
+   - [Core as a dependency](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#1-core-as-a-dependency-%EF%B8%8F)
+   - [Create a new project for the adapters](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#2-create-a-new-project-for-the-adapters-)
+   - [EmployeeRetrievementByIdPort & RoleRetrievementByIdPort adapters](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#3-employeeretrievementbyidport--roleretrievementbyidport-adapters-)
+   - [CareerPathRetrievementPort adapter](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#4-careerpathretrievementport-adapter-)
+   - [EmployeeAssignmentUpdatePort adapter](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#5-employeeassignmentupdateport-adapter-)
+   - [Create a dispatcher for the specific use case implementation stack layer](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#6-create-a-dispatcher-for-the-specific-use-case-implementation-stack-layer-)
+   - [Dispatcher as a dependency](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#7-dispatcher-as-a-dependency-%EF%B8%8F)
 
 <br>
 
