@@ -377,3 +377,7 @@ _Create a class similar to the use case factory mentioned previously, but this t
 
 ### 7. Dispatcher as a dependency ✔️
 _Make the dispatcher a dependency. Now if you want to expose that specific use case implementation stack as a REST Endpoint, you use this dispatcher as a dependency to create the instance for executing the use case. If you want to expose it as a Kafka Topic Consumer, it is just the same. Trigger the execution based on getting messages at a SQS queue? The exact same approach. Your dispatcher becomes responsible for pluging a specific stack implementation in any way you want to trigger the use case execution, as a dependency._
+
+<br>
+
+That's all, folks! Having followed those steps and really understood the thought process presented in this breakdown step-by-step example, it should become easy to build applications using Clean Architecture principles being levaraged by the clean-arch-enablers library. 
