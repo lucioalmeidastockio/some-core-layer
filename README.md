@@ -335,7 +335,7 @@ Let's take an example of how it would take place:
 
 <br>
 
-## Dispatching the use case with its dependencies
+## Dispatching the use case with its dependencies 📦
 
 ### Core as a dependency ✔️
 _Make your core layer a dependency, a library, an artifact at some dependency repository._
@@ -348,13 +348,22 @@ _Create a new project and import the Core layer at it, as a dependency._
 <br>
 
 ### EmployeeRetrievementByIdPort & RoleRetrievementByIdPort adapters 🔌
-_Consider that for you to implement the retrievement of employee and role by their respective IDs you'll have to make a REST API call to another service. Their respective ports would be implemented respecting the contract defined at their ports and adapting it to make the REST API call needed, so inside of it you would use some HTTP Client library or so._
+_Consider that for you to implement the retrievement of an employee and a role by their respective IDs you'd have to fetch the data from a DynamoDB table, so in both port adapters you'd have to inject the library for integrating with DynamoDB and make the required adaptations to be able to make the calls that fetch the data and return it in the port output defined format._
 
 <br>
 
 ### CareerPathRetrievementPort adapter 🔌
-_For you to implement the retrievement of the allowed career path, you'd call the library API for fetching data from a DynamoDB table, so inside of it you'd use some AWS SDK libraray or so._
+_For you to implement the retrievement of the allowed career path, imagine you'd have to call a REST API endpoint from another service. So within this port adapter you'd have an instance of an HTTP Client, make the settings to call the endpoint and adapt the response of it to the format of the port output contract.
 
 <br>
 
 ### EmployeeAssignmentUpdatePort adapter 🔌
+_In the scenario which you are storing data at DynamoDB tables, you'd inject in this port adapter the library for integrating with DynamoDB and make the the required adaptations in order to interact with the external component (DynamoDB) and get it back to the Core layer in the format defined by the port contract_
+
+<br>
+
+### Create a dispatcher for the use case port implementation stack layer 📦
+_Create a class similar to the use case factory mentioned previously, but this time for injecting the actual adapters, without abstraction within. This class would be a use case dispatcher: it'd call the use case factory and pass the dependency wrapper object containing all the adapter instances. It is this class that would be responsible for instantiating the use case object wired to the specific adapters of a specific port implementation stack._
+
+### Dispatcher as a dependency ✔️
+_Make the dispatcher a dependency. Now if you want to expose that specific use case implementation stack as a REST Endpoint, you use this dispatcher as a dependency to create the instance for executing the use case. If you want to expose it as a Kafka Topic Consumer, it is just the same. Your dispatcher is responsible for pluging a specific stack implementation in any way you want, as a dependency._
