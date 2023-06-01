@@ -333,20 +333,28 @@ That being done, we are ready to start implementing the adapters of our ports at
 
 Let's take an example of how it would take place:
 
+<br>
+
+## Dispatching the use case with its dependencies
+
 ### Core as a dependency ✔️
-Make your core layer a dependency, a library, an artifact at some dependency repository.
+_Make your core layer a dependency, a library, an artifact at some dependency repository._
+
+<br>
 
 ### Create a new project for the adapters 🆕
-Create a new project and import the Core layer at it, as a dependency.
-
-- ### EmployeeRetrievementByIdPort & RoleRetrievementByIdPort adapters 🔌
-Consider that for you to implement the retrievement of employee and role by their respective IDs you'll have to make a REST API call to another service. Their respective ports would be implemented respecting the contract defined at their ports and adapting it to make the REST API call needed, so inside of it you would use some HTTP Client library or so. 
+_Create a new project and import the Core layer at it, as a dependency._
 
 <br>
 
-- ### CareerPathRetrievementPort adapter 🔌
-For you to implement the retrievement of the allowed career path, you'd call the library API for fetching data from a DynamoDB table, so inside of it you'd use some AWS SDK libraray or so.
+### EmployeeRetrievementByIdPort & RoleRetrievementByIdPort adapters 🔌
+_Consider that for you to implement the retrievement of employee and role by their respective IDs you'll have to make a REST API call to another service. Their respective ports would be implemented respecting the contract defined at their ports and adapting it to make the REST API call needed, so inside of it you would use some HTTP Client library or so._
 
 <br>
 
-- ### EmployeeAssignmentUpdatePort adapter 🔌
+### CareerPathRetrievementPort adapter 🔌
+_For you to implement the retrievement of the allowed career path, you'd call the library API for fetching data from a DynamoDB table, so inside of it you'd use some AWS SDK libraray or so._
+
+<br>
+
+### EmployeeAssignmentUpdatePort adapter 🔌
