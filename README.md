@@ -8,6 +8,9 @@
    - [Time for Business Entities!](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#time-for-business-entities)
    - [First half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#first-half-of-our-use-case-implementation)
    - [Second half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#second-half-of-our-use-case-implementation)
+- Use case factory
+   - Factory package
+   - Factory class 
 
 <br>
 
@@ -291,4 +294,37 @@ That is the first half of the implementation. Let's dive into the second half of
 
 
 5. With all being done, it comes to the moment of persisting the changes somewhere, so we call the EmployeeAssignmentUpdatePort execution, finishing the flow of our use case.
+
+That is it for our use case implementation. Now we are good to go preparing it to be used outside at other layer.
+
+## Use case factory 🏭
+
+Now we need to make it available to retrieve an instance of our use case. The way I particularly chose to do it was via a factory class. The factory will instantiate a singleton object for our use case, meaning only one instance of our use case will be made from the moment we call the factory creation method.
+
+In order to the use case to be instantiated we need to pass its dependencies to its constructor, so the factory needs to have them somehow to accomplish the objective of creating a new instance of our use case.
+
+The way I did this was creating a class for wrapping those dependencies and then just passing one object of it to the factory. Let's take a look at it from the beggining:
+
+### Factory package 📦
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasefactorypackage.png)
+
+As you can see above, I created a package called "[factories](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/factories)" in which at its root there is the main class for the factory itself and a subpackage called "[dependency_wrapper](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/factories/dependency_wrapper)", where the class for wrapping all the dependencies I mentioned is at.
+
+### Factory class 🏗️
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasefactory.png)
+
+Pretty straightforward, ain' it? It just instantiates an object that will only be instantiated if its variable wasn't filled yet. To instantiate it we pass the attributes wrapped within the [PromotingEmployeeUseCaseDependencyWrapper](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/use_cases/promoting_employee/factories/dependency_wrapper/PromotingEmployeeUseCaseDependencyWrapper.java) object.
+
+Speaking of which, let's take a look at how I implemented the wrapper:
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasedependencywrapper.png)
+
+Notice how each getter method calls internally another method, the 'getValueWithNullSafety'. This method is inherited from the [UseCaseDependencyWrapper](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/app_utils/use_case_dependency_wrapper/UseCaseDependencyWrapper.java) class that I created specifically for this project, but it can be the case I add it to the library itself so it won't be necessary to create it all over again whenever we want to wrap use case dependencies to pass to a factory and guarantee they are not null as we pass them to the use case constructor. Anyhow, check it out:
+
+![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasedependencywrapperbaseclass.png)
+
+
+
 
