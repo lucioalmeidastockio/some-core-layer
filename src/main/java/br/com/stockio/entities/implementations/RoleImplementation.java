@@ -4,3 +4,5 @@ import br.com.stockio.entities.Role;
 
 public class RoleImplementation extends Role {
 }
+
+

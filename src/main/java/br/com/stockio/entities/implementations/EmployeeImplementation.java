@@ -35,3 +35,5 @@ public class EmployeeImplementation extends Employee {
         this.getCurrentRoleAssignment().ifPresent(RoleAssignment::endAssignment);
     }
 }
+
+

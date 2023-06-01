@@ -15,3 +15,5 @@ public abstract class RoleAssignment implements Entity{
 
     public abstract void endAssignment();
 }
+
+

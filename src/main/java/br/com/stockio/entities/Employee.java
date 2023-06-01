@@ -4,6 +4,7 @@ import br.com.stockio.entities.factories.RoleAssignmentFactory;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -14,7 +15,7 @@ public abstract class Employee implements Entity {
 
     protected UUID id;
     protected String name;
-    protected List<RoleAssignment> roleAssignments;
+    protected List<RoleAssignment> roleAssignments = new ArrayList<>();
 
     protected final RoleAssignmentFactory roleAssignmentFactory;
 
@@ -24,7 +25,11 @@ public abstract class Employee implements Entity {
 
     public abstract void assumeNewRole(Role newRole);
     public abstract Optional<RoleAssignment> getCurrentRoleAssignment();
-
     public abstract void endCurrentAssignment();
 
 }
+
+
+
+
+

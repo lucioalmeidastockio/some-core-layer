@@ -12,3 +12,4 @@ public class RoleAssignmentImplementation extends RoleAssignment {
             this.endingMoment = LocalDateTime.now();
     }
 }
+
