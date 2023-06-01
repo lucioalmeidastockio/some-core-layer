@@ -297,6 +297,8 @@ That is the first half of the implementation. Let's dive into the second half of
 
 That is it for our use case implementation. Now we are good to go preparing it to be used outside at other possible layers.
 
+<br>
+
 ## Use case factory 🏭
 
 Now we need to make it available to retrieve an instance of our use case. The way I particularly chose to do it was via a factory class. The factory will instantiate a singleton object for our use case, meaning only one instance of our use case will be made from the moment we call the factory creation method.
