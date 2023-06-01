@@ -303,9 +303,9 @@ That is it for our use case implementation. Now we are good to go preparing it t
 
 Now we need to make it available to retrieve an instance of our use case. The way I particularly chose to do it was via a factory class. The factory will instantiate a singleton object for our use case, meaning only one instance of our use case will be made from the moment we call the factory creation method.
 
-In order to the use case to be instantiated we need to pass its dependencies to its constructor, so the factory needs to have them somehow to accomplish the objective of creating a new instance of our use case.
+In order to the use case to be instantiated we need to pass its dependencies to its constructor, so the factory needs to have them somehow to accomplish the objective of creating a new instance of our use case. The way I did this was creating a class for wrapping those dependencies and then just passing one object of it to the factory. 
 
-The way I did this was creating a class for wrapping those dependencies and then just passing one object of it to the factory. Let's take a look at it from the beggining:
+Let's take a look at it from the beggining.
 
 ### Factory package 📦
 
