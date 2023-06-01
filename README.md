@@ -323,10 +323,30 @@ Speaking of which, let's take a look at how I implemented the wrapper:
 
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasedependencywrapper.png)
 
-Notice how each getter method calls internally another method, the 'getValueWithNullSafety'. This method is inherited from the [UseCaseDependencyWrapper](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/app_utils/use_case_dependency_wrapper/UseCaseDependencyWrapper.java) class that I created specifically for this project, but it can be the case I add it to the library itself so it won't be necessary to create it all over again whenever we want to wrap use case dependencies to pass to a factory and guarantee they are not null as we pass them to the use case constructor. Anyhow, check it out:
+Notice how each getter method calls internally another method, the 'getValueWithNullSafety'. This method is inherited from the [UseCaseDependencyWrapper](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/src/main/java/br/com/stockio/app_utils/use_case_dependency_wrapper/UseCaseDependencyWrapper.java) class that I created specifically for this project, but it can be the case I add it to the library itself so it won't be necessary to create it all over again whenever we want to wrap use case dependencies to pass to a factory and guarantee they are not null as we pass them to the use case constructor. 
+
+Anyhow, check it out:
 
 ![](https://raw.githubusercontent.com/lucioalmeidastockio/some-core-layer/1-example-documentation/images/usecasedependencywrapperbaseclass.png)
 
+That being done, we are ready to start implementing the adapters of our ports at another layer, using our Core layer as a library dependency and picking the specific external components needed, injecting them into the use case object via its factory. Once we do that, we can dispatch an artifact of it at some dependency repository, wrapping it all together as a specific implementation stack of our use case. 
 
+Let's take an example of how it would take place:
 
+### Core as a dependency ✔️
+Make your core layer a dependency, a library, an artifact at some dependency repository.
 
+### Create a new project for the adapters 🆕
+Create a new project and import the Core layer at it, as a dependency.
+
+- ### EmployeeRetrievementByIdPort & RoleRetrievementByIdPort adapters 🔌
+Consider that for you to implement the retrievement of employee and role by their respective IDs you'll have to make a REST API call to another service. Their respective ports would be implemented respecting the contract defined at their ports and adapting it to make the REST API call needed, so inside of it you would use some HTTP Client library or so. 
+
+<br>
+
+- ### CareerPathRetrievementPort adapter 🔌
+For you to implement the retrievement of the allowed career path, you'd call the library API for fetching data from a DynamoDB table, so inside of it you'd use some AWS SDK libraray or so.
+
+<br>
+
+- ### EmployeeAssignmentUpdatePort adapter 🔌
