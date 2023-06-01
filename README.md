@@ -8,9 +8,9 @@
    - [Time for Business Entities!](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#time-for-business-entities)
    - [First half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#first-half-of-our-use-case-implementation)
    - [Second half of our use case implementation](https://github.com/lucioalmeidastockio/some-core-layer/blob/1-example-documentation/README.md#second-half-of-our-use-case-implementation)
-- Use case factory
-   - Factory package
-   - Factory class 
+- [Use case factory](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#use-case-factory-)
+   - [Factory package](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#factory-package-)
+   - [Factory class](https://github.com/lucioalmeidastockio/some-core-layer/tree/1-example-documentation#factory-class-%EF%B8%8F)
 
 <br>
 
