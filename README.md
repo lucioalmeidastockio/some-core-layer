@@ -382,4 +382,4 @@ _Make the dispatcher a dependency. Now if you want to expose that specific use c
 
 ## That's all, folks! 🔚
 
-Having followed those steps and really understood the thought process presented in this breakdown step-by-step example, it should become easy to build applications using Clean Architecture principles being levaraged by the clean-arch-enablers library. 
+Having followed those steps and really understood the thought process presented in this breakdown step-by-step example, it should become easy to build applications using Clean Architecture principles being levaraged by the [clean-arch-enablers](https://github.com/lucioalmeidastockio/clean-arch-enablers) library. 
