@@ -295,7 +295,7 @@ That is the first half of the implementation. Let's dive into the second half of
 
 5. With all being done, it comes to the moment of persisting the changes somewhere, so we call the EmployeeAssignmentUpdatePort execution, finishing the flow of our use case.
 
-That is it for our use case implementation. Now we are good to go preparing it to be used outside at other layer.
+That is it for our use case implementation. Now we are good to go preparing it to be used outside at other possible layers.
 
 ## Use case factory 🏭
 
